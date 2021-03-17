@@ -1,0 +1,46 @@
+<footer>
+  <div class="footer-navbar w">
+    <div class="navbar-title">
+      <span>D</span>
+      <span>AISY</span>
+      <span> T</span>
+      <span>ECHNOLOGY</span>
+    </div>
+    <el-row class="nav-main" type="flex">
+      <el-col class="hidden-sm-and-down" :md="10" :lg="12">
+        <div class="nav-main-meun">
+          <router-link class="meun-item" to="item.path" v-for="(item,index) in navInfo" :key="index">{{item.name}}
+          </router-link>
+        </div>
+      </el-col>
+
+      <el-col :lg="6" :md="7">
+        <ul class="nav-main-info">
+          <li>CONTECT US</li>
+          <li>
+            <i class="iconfont">&#xe68b;</i>
+            <span>021-7890 0090</span>
+          </li>
+          <li>
+            <i class="iconfont">&#xe632;</i>
+            <span>salestecni@163.com</span>
+          </li>
+          <li>
+            <i class="iconfont">&#xe647;</i>
+            <span>总部地址：深圳市***区***路*********</span>
+          </li>
+        </ul>
+      </el-col>
+
+      <el-col class="qrocde-wrapper" :lg="6" :md="7">
+        <div class="nav-main-qrocde">
+          <img src="../../assets/img/qrcode.jpg" alt="">
+          <p>请扫描二维码关注我们的微信公众平台</p>
+        </div>
+      </el-col>
+    </el-row>
+    <div class="nav-bottom">
+      <p>© 2020 Dasiy 版权所有 粤ICP备12040408</p>
+    </div>
+  </div>
+</footer>

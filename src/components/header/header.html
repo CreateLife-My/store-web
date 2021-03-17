@@ -1,0 +1,35 @@
+<header>
+  <el-row class="header-navbar" type="flex">
+    <el-col class="navbar-logo" :lg="6" :md="6" :xs="17">
+      <span>D</span>
+      <span>AISY</span>
+      <span> T</span>
+      <span>ECHNOLOGY</span>
+    </el-col>
+    <el-col class="navbar-info hidden-sm-and-down" :lg="12" :md="14" type="flex">
+      <router-link class="nav-item" :to="item.path" v-for="(item,index) in navInfo" :key="item.id">
+        {{item.name}}
+      </router-link>
+    </el-col>
+    <el-col class="navbar-right" :lg="6" :md="4" :xs="7">
+      <li>
+        <a class="iconfont" href="#" @click="onSearch">&#xe616;</a>
+      </li>
+      <li>EN</li>
+      <li class="menu-btn hidden-md-and-up">
+        <a class="iconfont" @click.prevent="isShowNavMeun = !isShowNavMeun" href="#">&#xe65a;</a>
+        <div class="navMeun">
+          <el-collapse-transition>
+            <div class="meun-box" v-show="isShowNavMeun">
+              <div class="meun-title">DAISY TECHNOLOGY</div>
+              <router-link class="meun-item" :to="item.path" v-for="(item,index) in navInfo" :key="item.id">
+                {{item.name}}
+                <i class="iconfont">&#xe66f;</i>
+              </router-link>
+            </div>
+          </el-collapse-transition>
+        </div>
+      </li>
+    </el-col>
+  </el-row>
+</header>

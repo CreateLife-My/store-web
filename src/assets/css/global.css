@@ -1,0 +1,71 @@
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* background-color: rgb(235, 230, 223); */
+}
+
+body {
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:link,
+a:focus {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  background: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: top;
+  vertical-align: bottom;
+}
+
+button {
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.detail-btn {
+  color: #0000ff;
+}
+
+.w {
+  width: 84%;
+  margin: 0 auto;
+}
