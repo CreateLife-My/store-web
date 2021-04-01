@@ -35,7 +35,7 @@ export default {
 
 <style lang="less" scoped>
 .itemCard {
-  width: 260px;
+  width: 250px;
   font-size: 12px;
   cursor: pointer;
 
@@ -49,6 +49,12 @@ export default {
 
   &:hover i {
     transform: translateX(12px);
+  }
+}
+//  媒体查询要放在定义后的位置
+@media screen and (max-width: 767px) {
+  .itemCard {
+    width: 200px;
   }
 }
 

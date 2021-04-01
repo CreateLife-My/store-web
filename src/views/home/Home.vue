@@ -48,24 +48,73 @@ export default {
         }
       },
       imageList: [
-        { img: require("../../assets/img/guanggao.png") },
-        { img: require("../../assets/img/guanggao.png") },
-        { img: require("../../assets/img/guanggao.png") }
+        {
+          img: require("../../assets/img/guanggao.png"),
+          imga: require("../../assets/img/guanggao640.jpg")
+        },
+        {
+          img: require("../../assets/img/guanggao.png"),
+          imga: require("../../assets/img/guanggao640.jpg")
+        },
+        {
+          img: require("../../assets/img/guanggao.png"),
+          imga: require("../../assets/img/guanggao640.jpg")
+        }
       ],
       headerStyle: false,
       productBtnData: {
         path: "/product",
         color: "#fff",
         backgroundColor: "#0000ff"
-      }
+      },
+
+      screenWidth: 0
+      // changeImg: true
     };
   },
-  computed: {},
-  watch: {},
-  created() {},
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
+  computed: {
+    changeImg() {
+      if (this.screenWidth < 992) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+
+    carouselHeigth() {
+      if (this.screenWidth < 992) {
+        return (this.screenWidth * 340) / 640 + "px";
+      } else {
+        return 700 + "px";
+      }
+    }
   },
+  watch: {
+    screenWidth(val) {
+      // 为了避免频繁触发resize函数导致页面卡顿，使用定时器
+      if (!this.timer) {
+        // 一旦监听到的screenWidth值改变，就将其重新赋给data里的screenWidth
+        this.screenWidth = val;
+        this.timer = true;
+        let that = this;
+        setTimeout(function() {
+          // 打印screenWidth变化的值
+          // console.log(this.screenWidth);
+          that.timer = false;
+        }, 400);
+      }
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+    this.screenWidth = document.body.clientWidth;
+    window.onresize = () => {
+      return (() => {
+        this.screenWidth = document.body.clientWidth;
+      })();
+    };
+  },
+  mounted() {},
   methods: {
     handleScroll() {
       let scrollTop =

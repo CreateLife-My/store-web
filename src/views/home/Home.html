@@ -1,10 +1,10 @@
 <div class="home">
   <Header id="nav-header" class="nav-header" :class="{'nav-header2':headerStyle }"></Header>
-  <ToolBar v-drag />
+  <!-- <ToolBar v-drag /> -->
   <!-- 轮播 -->
-  <el-carousel class="carousel" :interval="5000" arrow="always" height="700px">
+  <el-carousel class="carousel" :interval="5000" arrow="always" :height=carouselHeigth>
     <el-carousel-item v-for="(item,index) in imageList" :key="index">
-      <img class="item-img" :src="item.img" alt="">
+      <img class="item-img" :src="changeImg?item.img : item.imga" alt="">
     </el-carousel-item>
   </el-carousel>
 
@@ -30,14 +30,6 @@
   </section>
 
   <!-- 解决方案 -->
-  <section class=" ">
-    <div class="floor-wrap-2 w">
-      <button @click="$router.push({ name: 'product', params: {order:123} })">跳转</button>
-      <button @click="$router.push({ path: '/product', query: {order:123} })">跳转</button>
-    </div>
-  </section>
-
-  <main style="height: 3000px;"></main>
 
   <Footer></Footer>
 </div>
